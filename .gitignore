@@ -1,0 +1,67 @@
+# .gitignore for LaTeX project (IEEEtran)
+
+# LaTeX intermediate / build files
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+*.idx
+*.ilg
+*.ind
+*.synctex.gz
+*.fdb_latexmk
+*.run.xml
+*.nav
+*.snm
+*.vrb
+*.bbl
+*.blg
+*.brf
+*.docx
+# latexmk / build directories
+.latexmkrc
+build/
+_build/
+
+# # Generated PDFs (ignore by default; remove if you want to track PDFs)
+# *.pdf
+
+# Editor / OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Vim swap / backup
+*~
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# VS Code / JetBrains
+.vscode/
+.idea/
+*.iml
+
+# # Image cache / exported figures (optional; keep if you want to check images into git)
+# # Comment out the next lines if you want to track generated images
+# *.png
+# *.jpg
+# *.jpeg
+# *.eps
+# *.pdf_tex
+
+# Other
+*.auxlock
+
+# End of .gitignore
