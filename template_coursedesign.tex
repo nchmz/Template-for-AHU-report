@@ -1,0 +1,83 @@
+\documentclass[coursedesign]{ahu_report} % 自动启用 nofirstpagebg
+
+\title{安徽大学课程设计/实验报告模板}
+\course{课程名称} % 这里用 course 作为副标题/课程名
+\academy{电子信息工程学院} % 可选，默认为电子信息工程学院
+\major{专业名称}
+\grade{23级}
+\stuid{P1000000}
+\name{张三}
+
+\begin{document}
+\makeahutitle
+\tableofcontents
+\newpage
+\begin{abstract}
+这里是摘要部分。本模板旨在为安徽大学的学生提供一个规范的课程设计或实验报告排版格式。摘要应简明扼要地概括报告的研究背景、主要内容、研究方法以及最终结论。
+\end{abstract}
+
+\section{引言}
+这里是引言部分。请在这里介绍实验或课程设计的背景、目的和意义。可以引用相关文献来支持你的观点\cite{CNEA2024}。也可以同时引用多篇文献\cite{NEA2023, NEAPlan2007}。
+
+\section{正文部分}
+这里是正文部分。你可以根据需要分章节进行阐述。
+
+\subsection{二级标题示例}
+这是二级标题下的内容。
+
+\subsubsection{三级标题示例}
+这是三级标题下的内容。
+
+\section{图片插入示例}
+本模板支持插入图片。建议将图片文件放在 \texttt{pic} 文件夹中。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{pic/ex1.png}
+    \caption{示例图片}
+    \label{fig:ex1}
+\end{figure}
+
+如图 \ref{fig:ex1} 所示，这是一张示例图片。
+
+\section{表格示例}
+以下是表格的示例。根据要求，保留了原文档中的表格作为参考。
+
+\begin{table}[H]
+\centering
+\caption{不同能源形式的特性对比（示例表格）}
+\begin{tabular}{@{\extracolsep{\fill}}ccccc@{}}
+\toprule
+能源类型 & 建设周期 & 投资成本 & 碳排放 & 稳定性 \\
+\midrule
+核电 & 5-7年 & 500-600亿元/百万千瓦 & 极低 & 极高 \\
+煤电 & 3-4年 & 300-400亿元/百万千瓦 & 极高 & 高 \\
+风电 & 1-2年 & 150-200亿元/百万千瓦 & 低 & 低 \\
+光伏 & 0.5-1年 & 80-120亿元/百万千瓦 & 低 & 低 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{全球主要国家核电发展情况对比（示例表格）}
+\begin{tabular}{@{\extracolsep{\fill}}cccc@{}}
+\toprule
+国家 & 运行机组数 & 核电占比 & 发展策略 \\
+\midrule
+法国 & 56 & 约70\% & 稳定发展、能源独立 \\
+美国 & 93 & 约20\% & 稳步推进、核心技术自主 \\
+日本 & 33 & 约3\% & 安全优先、逐步重启 \\
+韩国 & 23 & 约27\% & 积极发展、出口优势 \\
+中国 & 55 & 约3\% & 加速发展、自主创新 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{结论}
+这里是结论部分。总结你的实验结果或设计成果，并提出改进意见或展望。
+
+\bibliographystyle{unsrt}
+\bibliography{coursedesign_refs}
+
+\end{document}

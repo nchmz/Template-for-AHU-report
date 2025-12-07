@@ -1,0 +1,108 @@
+% TEX program=xelatex
+\documentclass[experiment]{ahu_report}
+
+\setbgopacity{0.8}
+
+\stuid{P1000000}
+\major{专业名称}
+\name{张三}
+\expdate{202X年X月X日}
+\course{课程名称}
+
+\begin{document}
+\begin{spacing}{1.25}
+    \makeahutitle
+  \begin{center}
+    {\zihao{2}\songti 实验名称}
+  \end{center}
+\section{实验目的}
+\begin{enumerate}
+    \item 掌握本实验相关的基础理论知识。
+    \item 熟悉实验仪器的使用方法。
+    \item 能够独立完成实验操作并记录数据。
+\end{enumerate}
+
+\section{实验原理}
+这里是实验原理部分。请在这里阐述实验所依据的理论基础、计算公式或工作原理。
+
+\subsection{原理小节示例}
+可以分小节进行详细描述。例如，介绍实验中涉及的硬件电路或算法流程。
+
+\section{图片插入示例}
+本模板支持插入单张图片和多张子图。建议将图片文件放在 \texttt{pic} 文件夹中。
+
+\subsection{单张图片}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{pic/ex1.png}
+    \caption{单张示例图片}
+    \label{fig:ex1}
+\end{figure}
+
+\subsection{多张子图（Subfigure）}
+以下是并排显示多张子图的示例，使用了 \texttt{subfigure} 宏包。
+
+\begin{figure}[H]
+\centering
+\subfigure[电解电容]{
+\includegraphics[width=0.3\linewidth]{pic/cap1.png}
+}
+\hfill
+\subfigure[陶瓷电容]{
+\includegraphics[width=0.3\linewidth]{pic/cap2.png}
+}
+\hfill
+\subfigure[钽电容]{
+\includegraphics[width=0.3\linewidth]{pic/cap3.png}
+}
+\caption{实验中使用的电容实物图（子图示例）}
+\label{fig:caps}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\subfigure[三极管驱动电路示意]{
+\includegraphics[width=0.45\linewidth]{pic/transistor_usage.png}
+}
+\hfill
+\subfigure[PNP与NPN三极管]{
+\includegraphics[width=0.45\linewidth]{pic/transistor_types.png}
+}
+\caption{三极管驱动电路与实物图（两张子图示例）}
+\label{fig:transistors}
+\end{figure}
+
+\section{代码块插入示例}
+本模板支持插入代码块，并支持语法高亮。以下是 C 语言代码的示例：
+
+\begin{lstlisting}[language=C, caption={C语言代码示例}, label={code:c_example}]
+#include <stdio.h>
+
+int main() {
+    printf("Hello, AHU!\n");
+    return 0;
+}
+\end{lstlisting}
+
+也可以插入 Python 代码：
+
+\begin{lstlisting}[language=Python, caption={Python代码示例}]
+def hello():
+    print("Hello, AHU!")
+
+if __name__ == "__main__":
+    hello()
+\end{lstlisting}
+
+\section{实验内容与步骤}
+\begin{enumerate}
+    \item 搭建实验环境，连接实验线路。
+    \item 编写或运行实验代码/程序。
+    \item 观察实验现象，记录实验数据。
+\end{enumerate}
+
+\section{实验结果与分析}
+这里展示实验结果，包括数据表格、波形图或截图，并对结果进行分析讨论。
+
+\end{spacing}
+\end{document}
