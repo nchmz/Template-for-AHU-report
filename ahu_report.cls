@@ -95,7 +95,7 @@
             \vfill
             \centering
             % 强制图片填满页面
-            \includegraphics[width=\paperwidth,height=\paperheight]{backgroundwps}%
+            \includegraphics[width=\paperwidth,height=\paperheight]{background/backgroundwps}%
             \vfill
         }%
     }%
