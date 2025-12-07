@@ -16,6 +16,7 @@
 - `coursedesign_refs.bib` — 参考文献数据库示例。
 - `pic/` — 存放正文中使用的图片资源。
 - `logo/` — 存放校徽等图片资源。
+- `backgroud/` — 存放背景pdf资源。
 
 ## 🚀 如何使用模板
 
