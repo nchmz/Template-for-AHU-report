@@ -7,10 +7,14 @@
 \newif\if@firstpagebg
 \@firstpagebgtrue % 默认开启第一页背景
 
+\newif\if@enablebg % 全局背景开关
+\@enablebgtrue
+
 \newif\if@coursedesign
 \@coursedesignfalse % 默认是实验报告
 
 \DeclareOption{nofirstpagebg}{\@firstpagebgfalse}
+\DeclareOption{nobg}{\@enablebgfalse} % 关闭背景选项
 \DeclareOption{experiment}{\@coursedesignfalse}
 \DeclareOption{coursedesign}{%
   \@coursedesigntrue
@@ -70,6 +74,7 @@
     background,     % 位于内容下方
     mode=picture,   % 使用 picture 模式定位
     contents={%
+      \if@enablebg
         % 逻辑控制：第一页开关
         \if@firstpagebg
             \ahu@drawbgcontent % 允许第一页：直接画
@@ -78,6 +83,7 @@
                 \ahu@drawbgcontent % 禁止第一页：页码>1才画
             \fi
         \fi
+      \fi
     }
 ]{report.background}
 
