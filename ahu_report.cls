@@ -13,6 +13,9 @@
 \newif\if@coursedesign
 \@coursedesignfalse % 默认是实验报告
 
+\newif\if@ahu@twocolumn
+\@ahu@twocolumnfalse
+
 \DeclareOption{nofirstpagebg}{\@firstpagebgfalse}
 \DeclareOption{nobg}{\@enablebgfalse} % 关闭背景选项
 \DeclareOption{experiment}{\@coursedesignfalse}
@@ -20,11 +23,21 @@
   \@coursedesigntrue
   % \@firstpagebgfalse % 课设报告默认不显示第一页背景
 }
+\DeclareOption{twocolumn}{%
+  \@ahu@twocolumntrue
+  \PassOptionsToClass{twocolumn}{article}%
+}
+\DeclareOption{onecolumn}{%
+  \@ahu@twocolumnfalse
+  \PassOptionsToClass{onecolumn}{article}%
+}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
 
 \LoadClass[a4paper]{article}
+
+\AtBeginDocument{\if@ahu@twocolumn \twocolumn \fi}
 
 % =========================================================
 % 2. 宏包加载 (补全了之前遗漏的常用包)
@@ -165,6 +178,12 @@
 % 将背景层添加到 scrlayer-scrpage 管理的样式中
 \AddLayersToPageStyle{scrheadings}{report.background}
 \AddLayersToPageStyle{plain.scrheadings}{report.background}
+\AddLayersToPageStyle{plain}{report.background}
+
+\newcommand{\ahu@applypagestyle}{%
+  \pagestyle{scrheadings}%
+  \thispagestyle{scrheadings}%
+}
 
 % =========================================================
 % 5. 页眉页脚设置 (scrlayer-scrpage 语法)
@@ -188,6 +207,20 @@
   % 实验报告模式：居中显示学院和报告类型
   \chead{\zihao{-5}\songti 安徽大学电子信息工程学院\quad 实验报告}
 \fi
+
+% 统一应用自定义页眉页脚与背景层
+\AtBeginDocument{\ahu@applypagestyle}
+
+% 文档内列数切换命令，确保切换后页眉页脚与背景层保持一致
+\newcommand{\AHUTwoColumn}{%
+  \twocolumn
+  \ahu@applypagestyle
+}
+
+\newcommand{\AHUOneColumn}{%
+  \onecolumn
+  \ahu@applypagestyle
+}
 
 % =========================================================
 % 6. 变量与标题页

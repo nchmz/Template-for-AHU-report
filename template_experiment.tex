@@ -1,5 +1,5 @@
 % TEX program=xelatex
-\documentclass[experiment]{ahu_report}
+\documentclass[experiment,twocolumn]{ahu_report}
 
 \setbgopacity{0.4}
 
@@ -71,6 +71,18 @@
 \caption{三极管驱动电路与实物图（两张子图示例）}
 \label{fig:transistors}
 \end{figure}
+
+\section{宽幅内容切换示例}
+默认采用双栏排版，遇到需要整页宽度的图片或表格时，可以使用类提供的命令临时切换至单栏并自动恢复页眉、页脚与背景。
+
+\AHUOneColumn
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{pic/transistor_usage.png}
+    \caption{跨栏展示的大图示例（单栏模式）}
+    \label{fig:wide-transistor}
+\end{figure}
+\AHUTwoColumn
 
 \section{代码块插入示例}
 本模板支持插入代码块，并支持语法高亮。以下是 C 语言代码的示例：
