@@ -32,6 +32,7 @@
 - `coursedesign`：用于撰写课程设计报告。
 - `nofirstpagebg`：取消第一页的背景水印。
 - `nobg`：全局关闭背景水印。
+- `twocolumn` / `onecolumn`：在文档开始时启用或关闭双栏排版（可在文档内用命令随时切换）。
 
 ### 💡 示例
 
@@ -48,6 +49,19 @@
 **关闭背景报告：**
 ```latex
 \documentclass[可选参数,nobg]{ahu_report}
+```
+
+**开启双栏并在正文中切换：**
+```latex
+\documentclass[experiment,twocolumn]{ahu_report}
+
+\begin{document}
+... 正文 ...
+\AHUOneColumn  % 临时切回单栏，用于宽图或长表格
+... 宽内容 ...
+\AHUTwoColumn  % 继续双栏排版
+... 其他内容 ...
+\end{document}
 ```
 
 ### 📝 常用信息设置命令
